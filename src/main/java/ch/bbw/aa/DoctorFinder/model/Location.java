@@ -1,6 +1,8 @@
 package ch.bbw.aa.DoctorFinder.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Location
@@ -10,7 +12,7 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "Location")
+@Table(name = "location")
 public class Location {
 
     @Id
@@ -29,4 +31,9 @@ public class Location {
 
     @Column(nullable = false)
     private String canton;
+
+    @OneToMany(mappedBy = "person")
+    private List<Roster> rosterList = new ArrayList<Roster>();
+
+
 }

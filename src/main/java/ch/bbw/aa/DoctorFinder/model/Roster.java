@@ -1,5 +1,7 @@
 package ch.bbw.aa.DoctorFinder.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.xml.crypto.Data;
 
@@ -11,7 +13,7 @@ import javax.xml.crypto.Data;
  */
 
 @Entity
-@Table(name = "Roster")
+@Table(name = "roster")
 public class Roster {
 
     @Id
@@ -22,5 +24,13 @@ public class Roster {
     private Data from;
     private Data to;
     private String comment;
+
+    @OneToOne
+    @JoinColumn(name = "personidfs", insertable = true, updatable = true)
+    private Person person;
+
+    @ManyToOne
+    @JsonIgnore
+    private Location location;
 
 }

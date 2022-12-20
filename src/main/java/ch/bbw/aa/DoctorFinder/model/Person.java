@@ -13,7 +13,7 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "Person")
+@Table(name = "person")
 
 public class Person {
 
@@ -48,8 +48,8 @@ public class Person {
     @JsonIgnore
     private Role role;
 
-
-
+    @OneToOne(mappedBy = "person")
+    private Roster roster;
 
 
 }
