@@ -26,4 +26,28 @@ public class Role {
     @OneToMany(mappedBy = "role")
     @JsonIgnore
     private List<Person> persons = new ArrayList<Person>();
+
+    public int getRoleid() {
+        return roleid;
+    }
+
+    public void setRoleid(int roleid) {
+        this.roleid = roleid;
+    }
+
+    public ch.bbw.aa.DoctorFinder.model.Rolename getRolename() {
+        return Rolename;
+    }
+
+    public void setRolename(ch.bbw.aa.DoctorFinder.model.Rolename rolename) {
+        Rolename = rolename;
+    }
+
+    public List<Person> getPersons() {
+        return persons;
+    }
+
+    public void setPersons(List<Person> persons) {
+        this.persons = persons;
+    }
 }
